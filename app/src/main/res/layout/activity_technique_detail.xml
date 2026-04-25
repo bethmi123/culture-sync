@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorBackground">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="@color/colorPrimary"
+        android:paddingStart="8dp">
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="48dp" android:layout_height="48dp"
+            android:src="@android:drawable/ic_media_previous"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:tint="#FFFFFF"/>
+        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/tvName"
+            android:textColor="#FFFFFF" android:textSize="17sp"
+            android:fontFamily="sans-serif-medium" android:layout_marginStart="8dp"/>
+    </LinearLayout>
+
+    <ScrollView android:layout_width="match_parent" android:layout_height="0dp"
+        android:layout_weight="1">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:padding="16dp">
+
+            <!-- Video player -->
+            <androidx.media3.ui.PlayerView
+                android:id="@+id/playerView"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginBottom="16dp"
+                app:resize_mode="fit"/>
+
+            <TextView
+                android:id="@+id/tvNoVideo"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:gravity="center"
+                android:text="@string/msg_demo_coming_soon"
+                android:textColor="#999"
+                android:visibility="gone"
+                android:layout_marginBottom="16dp"/>
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:layout_marginBottom="12dp">
+                <TextView android:id="@+id/tvDifficulty" android:layout_width="0dp"
+                    android:layout_height="wrap_content" android:layout_weight="1"
+                    android:textSize="14sp" android:textColor="@color/colorPrimary"/>
+                <TextView android:id="@+id/tvDuration" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:textSize="14sp" android:textColor="#666"/>
+            </LinearLayout>
+
+            <TextView android:id="@+id/tvDesc" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:textSize="15sp"
+                android:textColor="#333" android:lineSpacingMultiplier="1.5"
+                android:layout_marginBottom="24dp"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnStartPractice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_start_practice_ar"
+        android:layout_margin="16dp"/>
+
+</LinearLayout>

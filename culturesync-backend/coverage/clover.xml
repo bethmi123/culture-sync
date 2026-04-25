@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1774920912453" clover="3.2.0">
+  <project timestamp="1774920912453" name="All files">
+    <metrics statements="142" coveredstatements="136" conditionals="40" coveredconditionals="39" methods="16" coveredmethods="16" elements="198" coveredelements="191" complexity="0" loc="142" ncloc="142" packages="4" files="13" classes="13"/>
+    <package name="culturesync-backend">
+      <metrics statements="20" coveredstatements="20" conditionals="4" coveredconditionals="3" methods="2" coveredmethods="2"/>
+      <file name="app.js" path="/Users/bethmij/culture-sync/culturesync-backend/app.js">
+        <metrics statements="20" coveredstatements="20" conditionals="4" coveredconditionals="3" methods="2" coveredmethods="2"/>
+        <line num="1" count="11" type="stmt"/>
+        <line num="2" count="11" type="stmt"/>
+        <line num="3" count="11" type="stmt"/>
+        <line num="4" count="11" type="stmt"/>
+        <line num="5" count="11" type="stmt"/>
+        <line num="6" count="11" type="stmt"/>
+        <line num="8" count="11" type="stmt"/>
+        <line num="10" count="11" type="stmt"/>
+        <line num="11" count="11" type="cond" truecount="2" falsecount="0"/>
+        <line num="12" count="11" type="stmt"/>
+        <line num="13" count="11" type="stmt"/>
+        <line num="14" count="11" type="cond" truecount="1" falsecount="1"/>
+        <line num="16" count="11" type="stmt"/>
+        <line num="18" count="11" type="stmt"/>
+        <line num="19" count="11" type="stmt"/>
+        <line num="20" count="11" type="stmt"/>
+        <line num="21" count="11" type="stmt"/>
+        <line num="23" count="11" type="stmt"/>
+        <line num="24" count="11" type="stmt"/>
+        <line num="26" count="11" type="stmt"/>
+      </file>
+    </package>
+    <package name="culturesync-backend.src.middleware">
+      <metrics statements="15" coveredstatements="15" conditionals="8" coveredconditionals="8" methods="2" coveredmethods="2"/>
+      <file name="auth.js" path="/Users/bethmij/culture-sync/culturesync-backend/src/middleware/auth.js">
+        <metrics statements="11" coveredstatements="11" conditionals="4" coveredconditionals="4" methods="1" coveredmethods="1"/>
+        <line num="1" count="12" type="stmt"/>
+        <line num="3" count="12" type="stmt"/>
+        <line num="4" count="158" type="stmt"/>
+        <line num="5" count="158" type="cond" truecount="4" falsecount="0"/>
+        <line num="6" count="8" type="stmt"/>
+        <line num="8" count="150" type="stmt"/>
+        <line num="9" count="150" type="stmt"/>
+        <line num="10" count="139" type="stmt"/>
+        <line num="11" count="139" type="stmt"/>
+        <line num="12" count="139" type="stmt"/>
+        <line num="14" count="11" type="stmt"/>
+      </file>
+      <file name="errorHandler.js" path="/Users/bethmij/culture-sync/culturesync-backend/src/middleware/errorHandler.js">
+        <metrics statements="4" coveredstatements="4" conditionals="4" coveredconditionals="4" methods="1" coveredmethods="1"/>
+        <line num="1" count="12" type="stmt"/>
+        <line num="2" count="15" type="stmt"/>
+        <line num="3" count="15" type="cond" truecount="2" falsecount="0"/>
+        <line num="4" count="15" type="stmt"/>
+      </file>
+    </package>
+    <package name="culturesync-backend.src.models">
+      <metrics statements="31" coveredstatements="31" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="ARMarker.js" path="/Users/bethmij/culture-sync/culturesync-backend/src/models/ARMarker.js">
+        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="77" count="1" type="stmt"/>
+        <line num="78" count="1" type="stmt"/>
+        <line num="80" count="1" type="stmt"/>
+      </file>
+      <file name="Culture.js" path="/Users/bethmij/culture-sync/culturesync-backend/src/models/Culture.js">
+        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="89" count="1" type="stmt"/>
+        <line num="90" count="1" type="stmt"/>
+        <line num="91" count="1" type="stmt"/>
+        <line num="93" count="1" type="stmt"/>
+      </file>
+      <file name="Place.js" path="/Users/bethmij/culture-sync/culturesync-backend/src/models/Place.js">
+        <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="100" count="1" type="stmt"/>
+        <line num="101" count="1" type="stmt"/>
+        <line num="102" count="1" type="stmt"/>
+        <line num="103" count="1" type="stmt"/>
+        <line num="105" count="1" type="stmt"/>
+      </file>
+      <file name="Session.js" path="/Users/bethmij/culture-sync/culturesync-backend/src/models/Session.js">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="12" type="stmt"/>
+        <line num="3" count="12" type="stmt"/>
+        <line num="17" count="12" type="stmt"/>
+        <line num="19" count="12" type="stmt"/>
+      </file>
+      <file name="Technique.js" path="/Users/bethmij/culture-sync/culturesync-backend/src/models/Technique.js">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="11" type="stmt"/>
+        <line num="3" count="11" type="stmt"/>
+        <line num="18" count="11" type="stmt"/>
+      </file>
+      <file name="User.js" path="/Users/bethmij/culture-sync/culturesync-backend/src/models/User.js">
+        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="13" type="stmt"/>
+        <line num="2" count="13" type="stmt"/>
+        <line num="4" count="13" type="stmt"/>
+        <line num="17" count="13" type="stmt"/>
+        <line num="18" count="12" type="stmt"/>
+        <line num="21" count="13" type="stmt"/>
+      </file>
+    </package>
+    <package name="culturesync-backend.src.routes">
+      <metrics statements="76" coveredstatements="70" conditionals="28" coveredconditionals="28" methods="11" coveredmethods="11"/>
+      <file name="auth.js" path="/Users/bethmij/culture-sync/culturesync-backend/src/routes/auth.js">
+        <metrics statements="27" coveredstatements="25" conditionals="15" coveredconditionals="15" methods="3" coveredmethods="3"/>
+        <line num="1" count="11" type="stmt"/>
+        <line num="2" count="11" type="stmt"/>
+        <line num="3" count="11" type="stmt"/>
+        <line num="4" count="11" type="stmt"/>
+        <line num="6" count="11" type="stmt"/>
+        <line num="7" count="43" type="stmt"/>
+        <line num="10" count="11" type="stmt"/>
+        <line num="11" count="50" type="stmt"/>
+        <line num="12" count="50" type="stmt"/>
+        <line num="13" count="50" type="cond" truecount="5" falsecount="0"/>
+        <line num="14" count="42" type="cond" truecount="2" falsecount="0"/>
+        <line num="16" count="38" type="stmt"/>
+        <line num="17" count="38" type="stmt"/>
+        <line num="18" count="38" type="stmt"/>
+        <line num="20" count="38" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="28" count="11" type="stmt"/>
+        <line num="29" count="17" type="stmt"/>
+        <line num="30" count="17" type="stmt"/>
+        <line num="31" count="17" type="cond" truecount="4" falsecount="0"/>
+        <line num="33" count="10" type="stmt"/>
+        <line num="34" count="10" type="cond" truecount="4" falsecount="0"/>
+        <line num="35" count="5" type="stmt"/>
+        <line num="37" count="5" type="stmt"/>
+        <line num="38" count="5" type="stmt"/>
+        <line num="42" count="0" type="stmt"/>
+        <line num="45" count="11" type="stmt"/>
+      </file>
+      <file name="leaderboard.js" path="/Users/bethmij/culture-sync/culturesync-backend/src/routes/leaderboard.js">
+        <metrics statements="9" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="1" count="11" type="stmt"/>
+        <line num="2" count="11" type="stmt"/>
+        <line num="5" count="11" type="stmt"/>
+        <line num="6" count="19" type="stmt"/>
+        <line num="7" count="19" type="stmt"/>
+        <line num="12" count="60" type="stmt"/>
+        <line num="21" count="19" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="25" count="11" type="stmt"/>
+      </file>
+      <file name="sessions.js" path="/Users/bethmij/culture-sync/culturesync-backend/src/routes/sessions.js">
+        <metrics statements="26" coveredstatements="25" conditionals="11" coveredconditionals="11" methods="4" coveredmethods="4"/>
+        <line num="1" count="11" type="stmt"/>
+        <line num="2" count="11" type="stmt"/>
+        <line num="3" count="11" type="stmt"/>
+        <line num="4" count="11" type="stmt"/>
+        <line num="7" count="11" type="stmt"/>
+        <line num="8" count="123" type="stmt"/>
+        <line num="10" count="123" type="stmt"/>
+        <line num="12" count="123" type="cond" truecount="5" falsecount="0"/>
+        <line num="13" count="6" type="stmt"/>
+        <line num="15" count="117" type="cond" truecount="2" falsecount="0"/>
+        <line num="16" count="2" type="stmt"/>
+        <line num="18" count="115" type="cond" truecount="4" falsecount="0"/>
+        <line num="19" count="3" type="stmt"/>
+        <line num="22" count="112" type="stmt"/>
+        <line num="28" count="109" type="stmt"/>
+        <line num="29" count="1641" type="stmt"/>
+        <line num="30" count="1641" type="stmt"/>
+        <line num="31" count="109" type="stmt"/>
+        <line num="37" count="109" type="stmt"/>
+        <line num="38" count="3" type="stmt"/>
+        <line num="42" count="11" type="stmt"/>
+        <line num="43" count="11" type="stmt"/>
+        <line num="44" count="11" type="stmt"/>
+        <line num="47" count="11" type="stmt"/>
+        <line num="48" count="0" type="stmt"/>
+        <line num="51" count="11" type="stmt"/>
+      </file>
+      <file name="techniques.js" path="/Users/bethmij/culture-sync/culturesync-backend/src/routes/techniques.js">
+        <metrics statements="14" coveredstatements="12" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
+        <line num="1" count="11" type="stmt"/>
+        <line num="2" count="11" type="stmt"/>
+        <line num="5" count="11" type="stmt"/>
+        <line num="6" count="10" type="stmt"/>
+        <line num="7" count="10" type="stmt"/>
+        <line num="8" count="10" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="13" count="11" type="stmt"/>
+        <line num="14" count="14" type="stmt"/>
+        <line num="15" count="14" type="stmt"/>
+        <line num="16" count="14" type="cond" truecount="2" falsecount="0"/>
+        <line num="17" count="10" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="21" count="11" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>

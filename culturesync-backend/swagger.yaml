@@ -1,0 +1,955 @@
+openapi: 3.0.3
+info:
+  title: CultureSync Backend API
+  version: 1.0.0
+  description: |
+    Complete OpenAPI specification for the CultureSync backend.
+
+    Base path for versioned API routes is `/api/v1`.
+    Protected endpoints require `Authorization: Bearer <JWT>`.
+
+    Notes based on current implementation:
+    - Rate limit is 100 requests / 15 minutes (non-test env).
+    - JSON payload limit is 5 MB.
+    - Session timestamps (`startTime`, `endTime`) are Unix epoch in milliseconds.
+    - Accuracy is a score between 0 and 100.
+servers:
+  - url: http://localhost:3000
+    description: Local development
+  - url: /
+    description: Relative server URL
+tags:
+  - name: System
+    description: Health and service status endpoints.
+  - name: Auth
+    description: User registration and JWT login.
+  - name: Users
+    description: Profile retrieval and profile updates.
+  - name: Sessions
+    description: Practice session create/read/update workflows.
+  - name: Techniques
+    description: Public technique catalog endpoints.
+  - name: Leaderboard
+    description: Ranking endpoints based on user accuracy metrics.
+  - name: Sync
+    description: Offline-first batch synchronization endpoints.
+paths:
+  /health:
+    get:
+      tags: [System]
+      summary: Health check
+      description: Returns backend liveness metadata.
+      responses:
+        '200':
+          description: API is healthy.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HealthResponse'
+              examples:
+                ok:
+                  value:
+                    status: ok
+                    app: CultureSync API
+                    version: 1.0.0
+
+  /api/v1/auth/register:
+    post:
+      tags: [Auth]
+      summary: Register a new user
+      description: Creates a user and returns JWT + user payload.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RegisterRequest'
+            examples:
+              learner:
+                value:
+                  name: "Nimali Perera"
+                  email: "nimali@example.com"
+                  password: "StrongPass123!"
+      responses:
+        '201':
+          description: Registration successful.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthSuccessResponse'
+        '400':
+          description: Validation failure (missing/invalid fields).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              examples:
+                missingFields:
+                  value:
+                    success: false
+                    message: All fields required
+        '409':
+          description: Email already exists.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /api/v1/auth/login:
+    post:
+      tags: [Auth]
+      summary: Login with email and password
+      description: Returns a fresh JWT token and user profile summary.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LoginRequest'
+      responses:
+        '200':
+          description: Login successful.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthSuccessResponse'
+        '400':
+          description: Validation failure.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              examples:
+                invalidPayload:
+                  value:
+                    success: false
+                    message: Email and password required
+        '401':
+          description: Invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              examples:
+                badCredentials:
+                  value:
+                    success: false
+                    message: Invalid email or password
+
+  /api/v1/users/{id}:
+    get:
+      tags: [Users]
+      summary: Get user profile by id
+      description: Returns a user profile (requires valid JWT).
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/UserIdPath'
+      responses:
+        '200':
+          description: User found.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserGetResponse'
+        '400':
+          description: Invalid Mongo ObjectId format.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          description: User not found.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+    put:
+      tags: [Users]
+      summary: Update own profile by id
+      description: |
+        Updates selected profile fields.
+        Implementation only allows updating your own record (`token.userId === path.id`).
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/UserIdPath'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserUpdateRequest'
+            examples:
+              updateNameLanguage:
+                value:
+                  name: "Nimali P."
+                  language: "si"
+      responses:
+        '200':
+          description: User updated successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserGetResponse'
+        '400':
+          description: Invalid input / duplicate email.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              examples:
+                duplicateEmail:
+                  value:
+                    success: false
+                    message: Email already exists
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          description: Attempt to update another user.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              examples:
+                forbidden:
+                  value:
+                    success: false
+                    message: Forbidden: Cannot update other users
+        '404':
+          description: User not found.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /api/v1/sessions:
+    post:
+      tags: [Sessions]
+      summary: Create a practice session
+      description: |
+        Creates a new session for the authenticated user and recomputes
+        user aggregate stats (`totalSessions`, `averageAccuracy`, `bestAccuracy`).
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SessionCreateRequest'
+      responses:
+        '201':
+          description: Session created.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SessionSingleResponse'
+        '400':
+          description: Validation failure.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              examples:
+                badAccuracy:
+                  value:
+                    success: false
+                    message: accuracyScore must be 0–100
+                missingTechniqueId:
+                  value:
+                    success: false
+                    message: techniqueId is required
+                badFrameCount:
+                  value:
+                    success: false
+                    message: frameCount must be non-negative
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+    get:
+      tags: [Sessions]
+      summary: List sessions
+      description: |
+        Returns up to 50 sessions sorted by newest first.
+        Query `userId` is optional; defaults to authenticated user id.
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/UserIdQueryOptional'
+      responses:
+        '200':
+          description: Session list retrieved.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SessionListResponse'
+        '400':
+          description: Invalid user id format.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              examples:
+                badUserId:
+                  value:
+                    success: false
+                    message: Invalid userId format
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+  /api/v1/sessions/{id}:
+    put:
+      tags: [Sessions]
+      summary: Update session by id
+      description: |
+        Updates selected session fields for the session belonging to the authenticated user.
+        If `accuracyScore` is updated, user aggregate stats are recalculated.
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/SessionIdPath'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SessionUpdateRequest'
+      responses:
+        '200':
+          description: Session updated.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SessionSingleResponse'
+        '400':
+          description: Invalid session id format.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              examples:
+                badSessionId:
+                  value:
+                    success: false
+                    message: Invalid sessionId format
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          description: Session not found or does not belong to requester.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /api/v1/techniques:
+    get:
+      tags: [Techniques]
+      summary: List published techniques
+      description: |
+        Returns techniques where `isPublished=true`,
+        sorted by difficulty order: Beginner -> Intermediate -> Advanced.
+      responses:
+        '200':
+          description: Technique list retrieved.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TechniqueListResponse'
+
+  /api/v1/techniques/{techniqueId}:
+    get:
+      tags: [Techniques]
+      summary: Get technique by techniqueId
+      parameters:
+        - $ref: '#/components/parameters/TechniqueIdPath'
+      responses:
+        '200':
+          description: Technique found.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TechniqueSingleResponse'
+        '404':
+          description: Technique not found.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /api/v1/leaderboard:
+    get:
+      tags: [Leaderboard]
+      summary: Get top 20 leaderboard
+      description: |
+        Returns ranked users (up to 20) where `totalSessions > 0`,
+        sorted by `averageAccuracy` descending.
+      responses:
+        '200':
+          description: Leaderboard generated.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LeaderboardResponse'
+
+  /api/v1/sync/push:
+    post:
+      tags: [Sync]
+      summary: Push offline sessions batch
+      description: |
+        Batch upserts sessions for the authenticated user.
+        Matching key is `{ user, startTime }`.
+        Invalid session entries (e.g., accuracy outside 0-100) are skipped.
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SyncPushRequest'
+      responses:
+        '201':
+          description: Batch processed successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SyncPushResponse'
+              examples:
+                synced:
+                  value:
+                    success: true
+                    data:
+                      synced: 4
+        '400':
+          description: Invalid payload.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              examples:
+                missingSessions:
+                  value:
+                    success: false
+                    message: sessions array required
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+
+  parameters:
+    UserIdPath:
+      name: id
+      in: path
+      required: true
+      description: MongoDB ObjectId of the user.
+      schema:
+        type: string
+        example: 680b7dc18aee8c0382ce2d58
+    UserIdQueryOptional:
+      name: userId
+      in: query
+      required: false
+      description: Optional user id. Defaults to token user id when omitted.
+      schema:
+        type: string
+        example: 680b7dc18aee8c0382ce2d58
+    SessionIdPath:
+      name: id
+      in: path
+      required: true
+      description: MongoDB ObjectId of the session document.
+      schema:
+        type: string
+        example: 680b7fb67fcd914f436b7013
+    TechniqueIdPath:
+      name: techniqueId
+      in: path
+      required: true
+      description: Public technique id (not Mongo ObjectId).
+      schema:
+        type: string
+        example: BRL-001
+
+  responses:
+    Unauthorized:
+      description: Missing, invalid, or expired Bearer token.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+          examples:
+            noToken:
+              value:
+                success: false
+                message: No token provided
+            invalidToken:
+              value:
+                success: false
+                message: Invalid or expired token
+
+  schemas:
+    HealthResponse:
+      type: object
+      required: [status, app, version]
+      properties:
+        status:
+          type: string
+          example: ok
+        app:
+          type: string
+          example: CultureSync API
+        version:
+          type: string
+          example: 1.0.0
+
+    ErrorResponse:
+      type: object
+      required: [success, message]
+      properties:
+        success:
+          type: boolean
+          example: false
+        message:
+          type: string
+          example: Route not found
+
+    UserPublic:
+      type: object
+      required: [id, name, email, role]
+      properties:
+        id:
+          type: string
+          example: 680b7dc18aee8c0382ce2d58
+        name:
+          type: string
+          example: Nimali Perera
+        email:
+          type: string
+          format: email
+          example: nimali@example.com
+        role:
+          type: string
+          enum: [learner, admin]
+          example: learner
+
+    UserDocument:
+      type: object
+      description: Full user document shape returned by user endpoints.
+      properties:
+        _id:
+          type: string
+          example: 680b7dc18aee8c0382ce2d58
+        name:
+          type: string
+          example: Nimali Perera
+        email:
+          type: string
+          format: email
+          example: nimali@example.com
+        role:
+          type: string
+          enum: [learner, admin]
+        totalSessions:
+          type: number
+          example: 12
+        averageAccuracy:
+          type: number
+          format: float
+          example: 83.4
+        bestAccuracy:
+          type: number
+          format: float
+          example: 95.6
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+
+    RegisterRequest:
+      type: object
+      required: [name, email, password]
+      properties:
+        name:
+          type: string
+          minLength: 1
+        email:
+          type: string
+          format: email
+        password:
+          type: string
+          minLength: 1
+
+    LoginRequest:
+      type: object
+      required: [email, password]
+      properties:
+        email:
+          type: string
+          format: email
+        password:
+          type: string
+
+    AuthData:
+      type: object
+      required: [token, user]
+      properties:
+        token:
+          type: string
+          description: JWT signed with `JWT_SECRET`, expiry 30 days.
+        user:
+          $ref: '#/components/schemas/UserPublic'
+
+    AuthSuccessResponse:
+      type: object
+      required: [success, data]
+      properties:
+        success:
+          type: boolean
+          example: true
+        data:
+          $ref: '#/components/schemas/AuthData'
+
+    UserGetResponse:
+      type: object
+      required: [success, data]
+      properties:
+        success:
+          type: boolean
+          example: true
+        data:
+          $ref: '#/components/schemas/UserDocument'
+
+    UserUpdateRequest:
+      type: object
+      description: Partial update payload.
+      properties:
+        name:
+          type: string
+        email:
+          type: string
+          format: email
+        userType:
+          type: string
+          description: Optional client-defined user type field.
+        language:
+          type: string
+          description: Optional UI language preference.
+          example: en
+        syncStatus:
+          type: string
+          description: Optional sync status marker from client.
+
+    SessionDocument:
+      type: object
+      required:
+        - _id
+        - user
+        - techniqueId
+        - techniqueName
+        - startTime
+        - endTime
+        - durationSeconds
+        - accuracyScore
+        - frameCount
+      properties:
+        _id:
+          type: string
+          example: 680b7fb67fcd914f436b7013
+        user:
+          type: string
+          example: 680b7dc18aee8c0382ce2d58
+        techniqueId:
+          type: string
+          example: BRL-001
+        techniqueName:
+          type: string
+          example: Basic Cross Twist
+        startTime:
+          type: number
+          format: int64
+          description: Unix timestamp in milliseconds.
+          example: 1763742200000
+        endTime:
+          type: number
+          format: int64
+          description: Unix timestamp in milliseconds.
+          example: 1763742500000
+        durationSeconds:
+          type: number
+          example: 300
+        accuracyScore:
+          type: number
+          minimum: 0
+          maximum: 100
+          example: 88.7
+        frameCount:
+          type: number
+          minimum: 0
+          example: 920
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+
+    SessionCreateRequest:
+      type: object
+      required:
+        - techniqueId
+        - techniqueName
+        - startTime
+        - endTime
+        - durationSeconds
+        - accuracyScore
+        - frameCount
+      properties:
+        techniqueId:
+          oneOf:
+            - type: string
+            - type: number
+          description: Converted to string in backend before persistence.
+          example: BRL-001
+        techniqueName:
+          type: string
+          example: Basic Cross Twist
+        startTime:
+          type: number
+          format: int64
+          description: Unix timestamp in milliseconds.
+        endTime:
+          type: number
+          format: int64
+          description: Unix timestamp in milliseconds.
+        durationSeconds:
+          type: number
+          minimum: 0
+        accuracyScore:
+          type: number
+          minimum: 0
+          maximum: 100
+        frameCount:
+          type: number
+          minimum: 0
+
+    SessionUpdateRequest:
+      type: object
+      description: Partial update payload for a session.
+      properties:
+        endTime:
+          type: number
+          format: int64
+        durationSeconds:
+          type: number
+          minimum: 0
+        accuracyScore:
+          type: number
+          minimum: 0
+          maximum: 100
+        frameCount:
+          type: number
+          minimum: 0
+        status:
+          type: string
+          description: Optional client-side status field.
+          example: COMPLETED
+
+    SessionSingleResponse:
+      type: object
+      required: [success, data]
+      properties:
+        success:
+          type: boolean
+          example: true
+        data:
+          $ref: '#/components/schemas/SessionDocument'
+
+    SessionListResponse:
+      type: object
+      required: [success, data]
+      properties:
+        success:
+          type: boolean
+          example: true
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/SessionDocument'
+
+    TechniqueDocument:
+      type: object
+      properties:
+        _id:
+          type: string
+          example: 680b7e687fcd914f436b7009
+        techniqueId:
+          type: string
+          example: BRL-001
+        name:
+          type: string
+          example: Basic Cross Twist
+        description:
+          type: string
+          example: Introductory hand movement sequence for beginner practice.
+        difficulty:
+          type: string
+          enum: [Beginner, Intermediate, Advanced]
+        durationMinutes:
+          type: number
+          example: 10
+        steps:
+          type: array
+          items:
+            type: string
+        videoUrl:
+          type: string
+          nullable: true
+        thumbnailUrl:
+          type: string
+          nullable: true
+        isPublished:
+          type: boolean
+          example: true
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+
+    TechniqueListResponse:
+      type: object
+      required: [success, data]
+      properties:
+        success:
+          type: boolean
+          example: true
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/TechniqueDocument'
+
+    TechniqueSingleResponse:
+      type: object
+      required: [success, data]
+      properties:
+        success:
+          type: boolean
+          example: true
+        data:
+          $ref: '#/components/schemas/TechniqueDocument'
+
+    LeaderboardEntry:
+      type: object
+      required:
+        - userId
+        - userName
+        - averageAccuracy
+        - bestAccuracy
+        - totalSessions
+        - rank
+      properties:
+        userId:
+          type: string
+          example: 680b7dc18aee8c0382ce2d58
+        userName:
+          type: string
+          example: Nimali Perera
+        averageAccuracy:
+          type: number
+          format: float
+          example: 84.1
+        bestAccuracy:
+          type: number
+          format: float
+          example: 96.2
+        totalSessions:
+          type: number
+          example: 27
+        rank:
+          type: integer
+          minimum: 1
+          example: 1
+
+    LeaderboardResponse:
+      type: object
+      required: [success, data]
+      properties:
+        success:
+          type: boolean
+          example: true
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/LeaderboardEntry'
+
+    SyncSessionInput:
+      type: object
+      required:
+        - techniqueId
+        - startTime
+        - endTime
+        - durationSeconds
+        - accuracyScore
+      properties:
+        techniqueId:
+          oneOf:
+            - type: string
+            - type: number
+        techniqueName:
+          type: string
+          description: Defaults to `Technique {techniqueId}` when omitted.
+        startTime:
+          type: number
+          format: int64
+        endTime:
+          type: number
+          format: int64
+        durationSeconds:
+          type: number
+        accuracyScore:
+          type: number
+          minimum: 0
+          maximum: 100
+        frameCount:
+          type: number
+          minimum: 0
+
+    SyncPushRequest:
+      type: object
+      required: [sessions]
+      properties:
+        sessions:
+          type: array
+          minItems: 1
+          items:
+            $ref: '#/components/schemas/SyncSessionInput'
+
+    SyncPushData:
+      type: object
+      required: [synced]
+      properties:
+        synced:
+          type: integer
+          minimum: 0
+          description: Number of session records processed/upserted.
+          example: 4
+
+    SyncPushResponse:
+      type: object
+      required: [success, data]
+      properties:
+        success:
+          type: boolean
+          example: true
+        data:
+          $ref: '#/components/schemas/SyncPushData'

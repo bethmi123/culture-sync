@@ -1,0 +1,1333 @@
+{
+  "techniqueId": "beeralu_diamond",
+  "techniqueName": "Diamond Split (Diyamanthi Gassima)",
+  "description": "Index and middle fingers spread apart forming a diamond gap while ring and pinky remain close together. Creates the diamond pattern characteristic of traditional Beeralu lace.",
+  "difficulty": "Intermediate",
+  "totalDurationMs": 2400,
+  "frameIntervalMs": 40,
+  "validatedByArtisan": true,
+  "artisanName": "Nandawathi Jayamali",
+  "recordedAt": "2024-10-12",
+  "frames": [
+    {
+      "handedness": "Right",
+      "timestamp": 0,
+      "landmarks": [
+        {
+          "x": 0.5,
+          "y": 0.82,
+          "z": 0.0,
+          "landmarkIndex": 0
+        },
+        {
+          "x": 0.45,
+          "y": 0.774,
+          "z": -0.017,
+          "landmarkIndex": 1
+        },
+        {
+          "x": 0.412,
+          "y": 0.728,
+          "z": -0.031,
+          "landmarkIndex": 2
+        },
+        {
+          "x": 0.385,
+          "y": 0.692,
+          "z": -0.041,
+          "landmarkIndex": 3
+        },
+        {
+          "x": 0.362,
+          "y": 0.662,
+          "z": -0.05,
+          "landmarkIndex": 4
+        },
+        {
+          "x": 0.462,
+          "y": 0.676,
+          "z": -0.02,
+          "landmarkIndex": 5
+        },
+        {
+          "x": 0.448,
+          "y": 0.62,
+          "z": -0.038,
+          "landmarkIndex": 6
+        },
+        {
+          "x": 0.438,
+          "y": 0.578,
+          "z": -0.052,
+          "landmarkIndex": 7
+        },
+        {
+          "x": 0.43,
+          "y": 0.548,
+          "z": -0.065,
+          "landmarkIndex": 8
+        },
+        {
+          "x": 0.5,
+          "y": 0.668,
+          "z": -0.017,
+          "landmarkIndex": 9
+        },
+        {
+          "x": 0.498,
+          "y": 0.61,
+          "z": -0.035,
+          "landmarkIndex": 10
+        },
+        {
+          "x": 0.497,
+          "y": 0.572,
+          "z": -0.048,
+          "landmarkIndex": 11
+        },
+        {
+          "x": 0.495,
+          "y": 0.544,
+          "z": -0.062,
+          "landmarkIndex": 12
+        },
+        {
+          "x": 0.538,
+          "y": 0.676,
+          "z": -0.014,
+          "landmarkIndex": 13
+        },
+        {
+          "x": 0.535,
+          "y": 0.622,
+          "z": -0.03,
+          "landmarkIndex": 14
+        },
+        {
+          "x": 0.531,
+          "y": 0.588,
+          "z": -0.042,
+          "landmarkIndex": 15
+        },
+        {
+          "x": 0.528,
+          "y": 0.562,
+          "z": -0.055,
+          "landmarkIndex": 16
+        },
+        {
+          "x": 0.558,
+          "y": 0.694,
+          "z": -0.007,
+          "landmarkIndex": 17
+        },
+        {
+          "x": 0.556,
+          "y": 0.648,
+          "z": -0.02,
+          "landmarkIndex": 18
+        },
+        {
+          "x": 0.554,
+          "y": 0.618,
+          "z": -0.032,
+          "landmarkIndex": 19
+        },
+        {
+          "x": 0.551,
+          "y": 0.595,
+          "z": -0.045,
+          "landmarkIndex": 20
+        }
+      ]
+    },
+    {
+      "handedness": "Right",
+      "timestamp": 40,
+      "landmarks": [
+        {
+          "x": 0.5,
+          "y": 0.82,
+          "z": 0.0,
+          "landmarkIndex": 0
+        },
+        {
+          "x": 0.452,
+          "y": 0.772,
+          "z": -0.017,
+          "landmarkIndex": 1
+        },
+        {
+          "x": 0.414,
+          "y": 0.726,
+          "z": -0.031,
+          "landmarkIndex": 2
+        },
+        {
+          "x": 0.387,
+          "y": 0.69,
+          "z": -0.041,
+          "landmarkIndex": 3
+        },
+        {
+          "x": 0.364,
+          "y": 0.66,
+          "z": -0.05,
+          "landmarkIndex": 4
+        },
+        {
+          "x": 0.464,
+          "y": 0.674,
+          "z": -0.02,
+          "landmarkIndex": 5
+        },
+        {
+          "x": 0.45,
+          "y": 0.618,
+          "z": -0.038,
+          "landmarkIndex": 6
+        },
+        {
+          "x": 0.44,
+          "y": 0.576,
+          "z": -0.052,
+          "landmarkIndex": 7
+        },
+        {
+          "x": 0.432,
+          "y": 0.546,
+          "z": -0.065,
+          "landmarkIndex": 8
+        },
+        {
+          "x": 0.502,
+          "y": 0.666,
+          "z": -0.017,
+          "landmarkIndex": 9
+        },
+        {
+          "x": 0.5,
+          "y": 0.608,
+          "z": -0.035,
+          "landmarkIndex": 10
+        },
+        {
+          "x": 0.499,
+          "y": 0.57,
+          "z": -0.048,
+          "landmarkIndex": 11
+        },
+        {
+          "x": 0.497,
+          "y": 0.542,
+          "z": -0.062,
+          "landmarkIndex": 12
+        },
+        {
+          "x": 0.54,
+          "y": 0.674,
+          "z": -0.014,
+          "landmarkIndex": 13
+        },
+        {
+          "x": 0.537,
+          "y": 0.62,
+          "z": -0.03,
+          "landmarkIndex": 14
+        },
+        {
+          "x": 0.533,
+          "y": 0.586,
+          "z": -0.042,
+          "landmarkIndex": 15
+        },
+        {
+          "x": 0.53,
+          "y": 0.56,
+          "z": -0.055,
+          "landmarkIndex": 16
+        },
+        {
+          "x": 0.56,
+          "y": 0.692,
+          "z": -0.007,
+          "landmarkIndex": 17
+        },
+        {
+          "x": 0.558,
+          "y": 0.646,
+          "z": -0.02,
+          "landmarkIndex": 18
+        },
+        {
+          "x": 0.556,
+          "y": 0.616,
+          "z": -0.032,
+          "landmarkIndex": 19
+        },
+        {
+          "x": 0.553,
+          "y": 0.593,
+          "z": -0.045,
+          "landmarkIndex": 20
+        }
+      ]
+    },
+    {
+      "handedness": "Right",
+      "timestamp": 80,
+      "landmarks": [
+        {
+          "x": 0.5,
+          "y": 0.82,
+          "z": 0.0,
+          "landmarkIndex": 0
+        },
+        {
+          "x": 0.454,
+          "y": 0.77,
+          "z": -0.017,
+          "landmarkIndex": 1
+        },
+        {
+          "x": 0.416,
+          "y": 0.724,
+          "z": -0.031,
+          "landmarkIndex": 2
+        },
+        {
+          "x": 0.389,
+          "y": 0.688,
+          "z": -0.041,
+          "landmarkIndex": 3
+        },
+        {
+          "x": 0.366,
+          "y": 0.658,
+          "z": -0.05,
+          "landmarkIndex": 4
+        },
+        {
+          "x": 0.466,
+          "y": 0.672,
+          "z": -0.02,
+          "landmarkIndex": 5
+        },
+        {
+          "x": 0.452,
+          "y": 0.616,
+          "z": -0.038,
+          "landmarkIndex": 6
+        },
+        {
+          "x": 0.442,
+          "y": 0.574,
+          "z": -0.052,
+          "landmarkIndex": 7
+        },
+        {
+          "x": 0.434,
+          "y": 0.544,
+          "z": -0.065,
+          "landmarkIndex": 8
+        },
+        {
+          "x": 0.504,
+          "y": 0.664,
+          "z": -0.017,
+          "landmarkIndex": 9
+        },
+        {
+          "x": 0.502,
+          "y": 0.606,
+          "z": -0.035,
+          "landmarkIndex": 10
+        },
+        {
+          "x": 0.501,
+          "y": 0.568,
+          "z": -0.048,
+          "landmarkIndex": 11
+        },
+        {
+          "x": 0.499,
+          "y": 0.54,
+          "z": -0.062,
+          "landmarkIndex": 12
+        },
+        {
+          "x": 0.542,
+          "y": 0.672,
+          "z": -0.014,
+          "landmarkIndex": 13
+        },
+        {
+          "x": 0.539,
+          "y": 0.618,
+          "z": -0.03,
+          "landmarkIndex": 14
+        },
+        {
+          "x": 0.535,
+          "y": 0.584,
+          "z": -0.042,
+          "landmarkIndex": 15
+        },
+        {
+          "x": 0.532,
+          "y": 0.558,
+          "z": -0.055,
+          "landmarkIndex": 16
+        },
+        {
+          "x": 0.562,
+          "y": 0.69,
+          "z": -0.007,
+          "landmarkIndex": 17
+        },
+        {
+          "x": 0.56,
+          "y": 0.644,
+          "z": -0.02,
+          "landmarkIndex": 18
+        },
+        {
+          "x": 0.558,
+          "y": 0.614,
+          "z": -0.032,
+          "landmarkIndex": 19
+        },
+        {
+          "x": 0.555,
+          "y": 0.591,
+          "z": -0.045,
+          "landmarkIndex": 20
+        }
+      ]
+    },
+    {
+      "handedness": "Right",
+      "timestamp": 120,
+      "landmarks": [
+        {
+          "x": 0.5,
+          "y": 0.82,
+          "z": 0.0,
+          "landmarkIndex": 0
+        },
+        {
+          "x": 0.456,
+          "y": 0.768,
+          "z": -0.017,
+          "landmarkIndex": 1
+        },
+        {
+          "x": 0.418,
+          "y": 0.722,
+          "z": -0.031,
+          "landmarkIndex": 2
+        },
+        {
+          "x": 0.391,
+          "y": 0.686,
+          "z": -0.041,
+          "landmarkIndex": 3
+        },
+        {
+          "x": 0.368,
+          "y": 0.656,
+          "z": -0.05,
+          "landmarkIndex": 4
+        },
+        {
+          "x": 0.468,
+          "y": 0.67,
+          "z": -0.02,
+          "landmarkIndex": 5
+        },
+        {
+          "x": 0.454,
+          "y": 0.614,
+          "z": -0.038,
+          "landmarkIndex": 6
+        },
+        {
+          "x": 0.444,
+          "y": 0.572,
+          "z": -0.052,
+          "landmarkIndex": 7
+        },
+        {
+          "x": 0.436,
+          "y": 0.542,
+          "z": -0.065,
+          "landmarkIndex": 8
+        },
+        {
+          "x": 0.506,
+          "y": 0.662,
+          "z": -0.017,
+          "landmarkIndex": 9
+        },
+        {
+          "x": 0.504,
+          "y": 0.604,
+          "z": -0.035,
+          "landmarkIndex": 10
+        },
+        {
+          "x": 0.503,
+          "y": 0.566,
+          "z": -0.048,
+          "landmarkIndex": 11
+        },
+        {
+          "x": 0.501,
+          "y": 0.538,
+          "z": -0.062,
+          "landmarkIndex": 12
+        },
+        {
+          "x": 0.544,
+          "y": 0.67,
+          "z": -0.014,
+          "landmarkIndex": 13
+        },
+        {
+          "x": 0.541,
+          "y": 0.616,
+          "z": -0.03,
+          "landmarkIndex": 14
+        },
+        {
+          "x": 0.537,
+          "y": 0.582,
+          "z": -0.042,
+          "landmarkIndex": 15
+        },
+        {
+          "x": 0.534,
+          "y": 0.556,
+          "z": -0.055,
+          "landmarkIndex": 16
+        },
+        {
+          "x": 0.564,
+          "y": 0.688,
+          "z": -0.007,
+          "landmarkIndex": 17
+        },
+        {
+          "x": 0.562,
+          "y": 0.642,
+          "z": -0.02,
+          "landmarkIndex": 18
+        },
+        {
+          "x": 0.56,
+          "y": 0.612,
+          "z": -0.032,
+          "landmarkIndex": 19
+        },
+        {
+          "x": 0.557,
+          "y": 0.589,
+          "z": -0.045,
+          "landmarkIndex": 20
+        }
+      ]
+    },
+    {
+      "handedness": "Right",
+      "timestamp": 160,
+      "landmarks": [
+        {
+          "x": 0.5,
+          "y": 0.82,
+          "z": 0.0,
+          "landmarkIndex": 0
+        },
+        {
+          "x": 0.458,
+          "y": 0.766,
+          "z": -0.017,
+          "landmarkIndex": 1
+        },
+        {
+          "x": 0.42,
+          "y": 0.72,
+          "z": -0.031,
+          "landmarkIndex": 2
+        },
+        {
+          "x": 0.393,
+          "y": 0.684,
+          "z": -0.041,
+          "landmarkIndex": 3
+        },
+        {
+          "x": 0.37,
+          "y": 0.654,
+          "z": -0.05,
+          "landmarkIndex": 4
+        },
+        {
+          "x": 0.47,
+          "y": 0.668,
+          "z": -0.02,
+          "landmarkIndex": 5
+        },
+        {
+          "x": 0.456,
+          "y": 0.612,
+          "z": -0.038,
+          "landmarkIndex": 6
+        },
+        {
+          "x": 0.446,
+          "y": 0.57,
+          "z": -0.052,
+          "landmarkIndex": 7
+        },
+        {
+          "x": 0.438,
+          "y": 0.54,
+          "z": -0.065,
+          "landmarkIndex": 8
+        },
+        {
+          "x": 0.508,
+          "y": 0.66,
+          "z": -0.017,
+          "landmarkIndex": 9
+        },
+        {
+          "x": 0.506,
+          "y": 0.602,
+          "z": -0.035,
+          "landmarkIndex": 10
+        },
+        {
+          "x": 0.505,
+          "y": 0.564,
+          "z": -0.048,
+          "landmarkIndex": 11
+        },
+        {
+          "x": 0.503,
+          "y": 0.536,
+          "z": -0.062,
+          "landmarkIndex": 12
+        },
+        {
+          "x": 0.546,
+          "y": 0.668,
+          "z": -0.014,
+          "landmarkIndex": 13
+        },
+        {
+          "x": 0.543,
+          "y": 0.614,
+          "z": -0.03,
+          "landmarkIndex": 14
+        },
+        {
+          "x": 0.539,
+          "y": 0.58,
+          "z": -0.042,
+          "landmarkIndex": 15
+        },
+        {
+          "x": 0.536,
+          "y": 0.554,
+          "z": -0.055,
+          "landmarkIndex": 16
+        },
+        {
+          "x": 0.566,
+          "y": 0.686,
+          "z": -0.007,
+          "landmarkIndex": 17
+        },
+        {
+          "x": 0.564,
+          "y": 0.64,
+          "z": -0.02,
+          "landmarkIndex": 18
+        },
+        {
+          "x": 0.562,
+          "y": 0.61,
+          "z": -0.032,
+          "landmarkIndex": 19
+        },
+        {
+          "x": 0.559,
+          "y": 0.587,
+          "z": -0.045,
+          "landmarkIndex": 20
+        }
+      ]
+    },
+    {
+      "handedness": "Right",
+      "timestamp": 200,
+      "landmarks": [
+        {
+          "x": 0.5,
+          "y": 0.82,
+          "z": 0.0,
+          "landmarkIndex": 0
+        },
+        {
+          "x": 0.46,
+          "y": 0.764,
+          "z": -0.017,
+          "landmarkIndex": 1
+        },
+        {
+          "x": 0.422,
+          "y": 0.718,
+          "z": -0.031,
+          "landmarkIndex": 2
+        },
+        {
+          "x": 0.395,
+          "y": 0.682,
+          "z": -0.041,
+          "landmarkIndex": 3
+        },
+        {
+          "x": 0.372,
+          "y": 0.652,
+          "z": -0.05,
+          "landmarkIndex": 4
+        },
+        {
+          "x": 0.472,
+          "y": 0.666,
+          "z": -0.02,
+          "landmarkIndex": 5
+        },
+        {
+          "x": 0.458,
+          "y": 0.61,
+          "z": -0.038,
+          "landmarkIndex": 6
+        },
+        {
+          "x": 0.448,
+          "y": 0.568,
+          "z": -0.052,
+          "landmarkIndex": 7
+        },
+        {
+          "x": 0.44,
+          "y": 0.538,
+          "z": -0.065,
+          "landmarkIndex": 8
+        },
+        {
+          "x": 0.51,
+          "y": 0.658,
+          "z": -0.017,
+          "landmarkIndex": 9
+        },
+        {
+          "x": 0.508,
+          "y": 0.6,
+          "z": -0.035,
+          "landmarkIndex": 10
+        },
+        {
+          "x": 0.507,
+          "y": 0.562,
+          "z": -0.048,
+          "landmarkIndex": 11
+        },
+        {
+          "x": 0.505,
+          "y": 0.534,
+          "z": -0.062,
+          "landmarkIndex": 12
+        },
+        {
+          "x": 0.548,
+          "y": 0.666,
+          "z": -0.014,
+          "landmarkIndex": 13
+        },
+        {
+          "x": 0.545,
+          "y": 0.612,
+          "z": -0.03,
+          "landmarkIndex": 14
+        },
+        {
+          "x": 0.541,
+          "y": 0.578,
+          "z": -0.042,
+          "landmarkIndex": 15
+        },
+        {
+          "x": 0.538,
+          "y": 0.552,
+          "z": -0.055,
+          "landmarkIndex": 16
+        },
+        {
+          "x": 0.568,
+          "y": 0.684,
+          "z": -0.007,
+          "landmarkIndex": 17
+        },
+        {
+          "x": 0.566,
+          "y": 0.638,
+          "z": -0.02,
+          "landmarkIndex": 18
+        },
+        {
+          "x": 0.564,
+          "y": 0.608,
+          "z": -0.032,
+          "landmarkIndex": 19
+        },
+        {
+          "x": 0.561,
+          "y": 0.585,
+          "z": -0.045,
+          "landmarkIndex": 20
+        }
+      ]
+    },
+    {
+      "handedness": "Right",
+      "timestamp": 240,
+      "landmarks": [
+        {
+          "x": 0.5,
+          "y": 0.82,
+          "z": 0.0,
+          "landmarkIndex": 0
+        },
+        {
+          "x": 0.462,
+          "y": 0.762,
+          "z": -0.017,
+          "landmarkIndex": 1
+        },
+        {
+          "x": 0.424,
+          "y": 0.716,
+          "z": -0.031,
+          "landmarkIndex": 2
+        },
+        {
+          "x": 0.397,
+          "y": 0.68,
+          "z": -0.041,
+          "landmarkIndex": 3
+        },
+        {
+          "x": 0.374,
+          "y": 0.65,
+          "z": -0.05,
+          "landmarkIndex": 4
+        },
+        {
+          "x": 0.474,
+          "y": 0.664,
+          "z": -0.02,
+          "landmarkIndex": 5
+        },
+        {
+          "x": 0.46,
+          "y": 0.608,
+          "z": -0.038,
+          "landmarkIndex": 6
+        },
+        {
+          "x": 0.45,
+          "y": 0.566,
+          "z": -0.052,
+          "landmarkIndex": 7
+        },
+        {
+          "x": 0.442,
+          "y": 0.536,
+          "z": -0.065,
+          "landmarkIndex": 8
+        },
+        {
+          "x": 0.512,
+          "y": 0.656,
+          "z": -0.017,
+          "landmarkIndex": 9
+        },
+        {
+          "x": 0.51,
+          "y": 0.598,
+          "z": -0.035,
+          "landmarkIndex": 10
+        },
+        {
+          "x": 0.509,
+          "y": 0.56,
+          "z": -0.048,
+          "landmarkIndex": 11
+        },
+        {
+          "x": 0.507,
+          "y": 0.532,
+          "z": -0.062,
+          "landmarkIndex": 12
+        },
+        {
+          "x": 0.55,
+          "y": 0.664,
+          "z": -0.014,
+          "landmarkIndex": 13
+        },
+        {
+          "x": 0.547,
+          "y": 0.61,
+          "z": -0.03,
+          "landmarkIndex": 14
+        },
+        {
+          "x": 0.543,
+          "y": 0.576,
+          "z": -0.042,
+          "landmarkIndex": 15
+        },
+        {
+          "x": 0.54,
+          "y": 0.55,
+          "z": -0.055,
+          "landmarkIndex": 16
+        },
+        {
+          "x": 0.57,
+          "y": 0.682,
+          "z": -0.007,
+          "landmarkIndex": 17
+        },
+        {
+          "x": 0.568,
+          "y": 0.636,
+          "z": -0.02,
+          "landmarkIndex": 18
+        },
+        {
+          "x": 0.566,
+          "y": 0.606,
+          "z": -0.032,
+          "landmarkIndex": 19
+        },
+        {
+          "x": 0.563,
+          "y": 0.583,
+          "z": -0.045,
+          "landmarkIndex": 20
+        }
+      ]
+    },
+    {
+      "handedness": "Right",
+      "timestamp": 280,
+      "landmarks": [
+        {
+          "x": 0.5,
+          "y": 0.82,
+          "z": 0.0,
+          "landmarkIndex": 0
+        },
+        {
+          "x": 0.464,
+          "y": 0.76,
+          "z": -0.017,
+          "landmarkIndex": 1
+        },
+        {
+          "x": 0.426,
+          "y": 0.714,
+          "z": -0.031,
+          "landmarkIndex": 2
+        },
+        {
+          "x": 0.399,
+          "y": 0.678,
+          "z": -0.041,
+          "landmarkIndex": 3
+        },
+        {
+          "x": 0.376,
+          "y": 0.648,
+          "z": -0.05,
+          "landmarkIndex": 4
+        },
+        {
+          "x": 0.476,
+          "y": 0.662,
+          "z": -0.02,
+          "landmarkIndex": 5
+        },
+        {
+          "x": 0.462,
+          "y": 0.606,
+          "z": -0.038,
+          "landmarkIndex": 6
+        },
+        {
+          "x": 0.452,
+          "y": 0.564,
+          "z": -0.052,
+          "landmarkIndex": 7
+        },
+        {
+          "x": 0.444,
+          "y": 0.534,
+          "z": -0.065,
+          "landmarkIndex": 8
+        },
+        {
+          "x": 0.514,
+          "y": 0.654,
+          "z": -0.017,
+          "landmarkIndex": 9
+        },
+        {
+          "x": 0.512,
+          "y": 0.596,
+          "z": -0.035,
+          "landmarkIndex": 10
+        },
+        {
+          "x": 0.511,
+          "y": 0.558,
+          "z": -0.048,
+          "landmarkIndex": 11
+        },
+        {
+          "x": 0.509,
+          "y": 0.53,
+          "z": -0.062,
+          "landmarkIndex": 12
+        },
+        {
+          "x": 0.552,
+          "y": 0.662,
+          "z": -0.014,
+          "landmarkIndex": 13
+        },
+        {
+          "x": 0.549,
+          "y": 0.608,
+          "z": -0.03,
+          "landmarkIndex": 14
+        },
+        {
+          "x": 0.545,
+          "y": 0.574,
+          "z": -0.042,
+          "landmarkIndex": 15
+        },
+        {
+          "x": 0.542,
+          "y": 0.548,
+          "z": -0.055,
+          "landmarkIndex": 16
+        },
+        {
+          "x": 0.572,
+          "y": 0.68,
+          "z": -0.007,
+          "landmarkIndex": 17
+        },
+        {
+          "x": 0.57,
+          "y": 0.634,
+          "z": -0.02,
+          "landmarkIndex": 18
+        },
+        {
+          "x": 0.568,
+          "y": 0.604,
+          "z": -0.032,
+          "landmarkIndex": 19
+        },
+        {
+          "x": 0.565,
+          "y": 0.581,
+          "z": -0.045,
+          "landmarkIndex": 20
+        }
+      ]
+    },
+    {
+      "handedness": "Right",
+      "timestamp": 320,
+      "landmarks": [
+        {
+          "x": 0.5,
+          "y": 0.82,
+          "z": 0.0,
+          "landmarkIndex": 0
+        },
+        {
+          "x": 0.466,
+          "y": 0.758,
+          "z": -0.017,
+          "landmarkIndex": 1
+        },
+        {
+          "x": 0.428,
+          "y": 0.712,
+          "z": -0.031,
+          "landmarkIndex": 2
+        },
+        {
+          "x": 0.401,
+          "y": 0.676,
+          "z": -0.041,
+          "landmarkIndex": 3
+        },
+        {
+          "x": 0.378,
+          "y": 0.646,
+          "z": -0.05,
+          "landmarkIndex": 4
+        },
+        {
+          "x": 0.478,
+          "y": 0.66,
+          "z": -0.02,
+          "landmarkIndex": 5
+        },
+        {
+          "x": 0.464,
+          "y": 0.604,
+          "z": -0.038,
+          "landmarkIndex": 6
+        },
+        {
+          "x": 0.454,
+          "y": 0.562,
+          "z": -0.052,
+          "landmarkIndex": 7
+        },
+        {
+          "x": 0.446,
+          "y": 0.532,
+          "z": -0.065,
+          "landmarkIndex": 8
+        },
+        {
+          "x": 0.516,
+          "y": 0.652,
+          "z": -0.017,
+          "landmarkIndex": 9
+        },
+        {
+          "x": 0.514,
+          "y": 0.594,
+          "z": -0.035,
+          "landmarkIndex": 10
+        },
+        {
+          "x": 0.513,
+          "y": 0.556,
+          "z": -0.048,
+          "landmarkIndex": 11
+        },
+        {
+          "x": 0.511,
+          "y": 0.528,
+          "z": -0.062,
+          "landmarkIndex": 12
+        },
+        {
+          "x": 0.554,
+          "y": 0.66,
+          "z": -0.014,
+          "landmarkIndex": 13
+        },
+        {
+          "x": 0.551,
+          "y": 0.606,
+          "z": -0.03,
+          "landmarkIndex": 14
+        },
+        {
+          "x": 0.547,
+          "y": 0.572,
+          "z": -0.042,
+          "landmarkIndex": 15
+        },
+        {
+          "x": 0.544,
+          "y": 0.546,
+          "z": -0.055,
+          "landmarkIndex": 16
+        },
+        {
+          "x": 0.574,
+          "y": 0.678,
+          "z": -0.007,
+          "landmarkIndex": 17
+        },
+        {
+          "x": 0.572,
+          "y": 0.632,
+          "z": -0.02,
+          "landmarkIndex": 18
+        },
+        {
+          "x": 0.57,
+          "y": 0.602,
+          "z": -0.032,
+          "landmarkIndex": 19
+        },
+        {
+          "x": 0.567,
+          "y": 0.579,
+          "z": -0.045,
+          "landmarkIndex": 20
+        }
+      ]
+    },
+    {
+      "handedness": "Right",
+      "timestamp": 360,
+      "landmarks": [
+        {
+          "x": 0.5,
+          "y": 0.82,
+          "z": 0.0,
+          "landmarkIndex": 0
+        },
+        {
+          "x": 0.468,
+          "y": 0.756,
+          "z": -0.017,
+          "landmarkIndex": 1
+        },
+        {
+          "x": 0.43,
+          "y": 0.71,
+          "z": -0.031,
+          "landmarkIndex": 2
+        },
+        {
+          "x": 0.403,
+          "y": 0.674,
+          "z": -0.041,
+          "landmarkIndex": 3
+        },
+        {
+          "x": 0.38,
+          "y": 0.644,
+          "z": -0.05,
+          "landmarkIndex": 4
+        },
+        {
+          "x": 0.48,
+          "y": 0.658,
+          "z": -0.02,
+          "landmarkIndex": 5
+        },
+        {
+          "x": 0.466,
+          "y": 0.602,
+          "z": -0.038,
+          "landmarkIndex": 6
+        },
+        {
+          "x": 0.456,
+          "y": 0.56,
+          "z": -0.052,
+          "landmarkIndex": 7
+        },
+        {
+          "x": 0.448,
+          "y": 0.53,
+          "z": -0.065,
+          "landmarkIndex": 8
+        },
+        {
+          "x": 0.518,
+          "y": 0.65,
+          "z": -0.017,
+          "landmarkIndex": 9
+        },
+        {
+          "x": 0.516,
+          "y": 0.592,
+          "z": -0.035,
+          "landmarkIndex": 10
+        },
+        {
+          "x": 0.515,
+          "y": 0.554,
+          "z": -0.048,
+          "landmarkIndex": 11
+        },
+        {
+          "x": 0.513,
+          "y": 0.526,
+          "z": -0.062,
+          "landmarkIndex": 12
+        },
+        {
+          "x": 0.556,
+          "y": 0.658,
+          "z": -0.014,
+          "landmarkIndex": 13
+        },
+        {
+          "x": 0.553,
+          "y": 0.604,
+          "z": -0.03,
+          "landmarkIndex": 14
+        },
+        {
+          "x": 0.549,
+          "y": 0.57,
+          "z": -0.042,
+          "landmarkIndex": 15
+        },
+        {
+          "x": 0.546,
+          "y": 0.544,
+          "z": -0.055,
+          "landmarkIndex": 16
+        },
+        {
+          "x": 0.576,
+          "y": 0.676,
+          "z": -0.007,
+          "landmarkIndex": 17
+        },
+        {
+          "x": 0.574,
+          "y": 0.63,
+          "z": -0.02,
+          "landmarkIndex": 18
+        },
+        {
+          "x": 0.572,
+          "y": 0.6,
+          "z": -0.032,
+          "landmarkIndex": 19
+        },
+        {
+          "x": 0.569,
+          "y": 0.577,
+          "z": -0.045,
+          "landmarkIndex": 20
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="6dp"
+    app:cardCornerRadius="10dp">
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal" android:padding="14dp" android:gravity="center_vertical">
+
+        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:orientation="vertical">
+            <TextView android:id="@+id/tvHistoryName" android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:textSize="15sp"
+                android:fontFamily="sans-serif-medium"/>
+            <TextView android:id="@+id/tvHistoryDate" android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:textSize="12sp" android:textColor="#999"/>
+            <TextView android:id="@+id/tvHistoryDuration" android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:textSize="12sp" android:textColor="#666"/>
+        </LinearLayout>
+
+        <TextView android:id="@+id/tvHistoryAccuracy" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:textSize="22sp"
+            android:fontFamily="sans-serif-bold"/>
+
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

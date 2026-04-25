@@ -1,0 +1,17 @@
+REQUIRED: Download the MediaPipe Hand Landmarker model file BEFORE building.
+
+File name: hand_landmarker.task
+Size:      ~5 MB
+Place at:  app/src/main/assets/models/hand_landmarker.task
+
+Download URL:
+https://storage.googleapis.com/mediapipe-models/hand_landmarker/hand_landmarker/float16/latest/hand_landmarker.task
+
+Steps:
+1. Open the URL above in your browser
+2. The file will download automatically
+3. Move it to this folder (app/src/main/assets/models/)
+4. Rebuild the project
+
+The model is bundled in the APK so the app works fully offline.
+Do NOT load this file from the internet at runtime.

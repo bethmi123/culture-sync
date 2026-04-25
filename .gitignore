@@ -22,3 +22,8 @@ yarn-error.log
 /.vscode
 /.zed
 "acendae-fe.iml" 
+.env
+local.properties
+.gradle/
+build/
+app/build/

@@ -1,0 +1,218 @@
+<resources>
+    <string name="app_name">CultureSync</string>
+    <string name="tagline">Preserving Beeralu Heritage</string>
+
+    <!-- Authentication -->
+    <string name="title_login">Login to CultureSync</string>
+    <string name="subtitle_login">Master the art of Beeralu lace making</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="btn_login">LOG IN</string>
+    <string name="btn_register">CREATE ACCOUNT</string>
+    <string name="link_forgot_password">Forgot password?</string>
+    <string name="link_register">Don\'t have an account? Sign Up</string>
+
+    <!-- Validation Errors -->
+    <string name="err_invalid_email">Invalid email format</string>
+    <string name="err_password_short">Password must be at least 6 characters</string>
+    <string name="err_passwords_mismatch">Passwords do not match</string>
+    <string name="err_fields_required">All fields are required</string>
+    <string name="err_login_required">Enter your email and password</string>
+    <string name="err_invalid_credentials">Invalid email or password</string>
+    <string name="err_email_exists">An account with this email already exists</string>
+    <string name="msg_password_reset_success">Password updated successfully</string>
+    <string name="err_user_not_found">No account found with this email</string>
+
+    <!-- Labels & Difficulty -->
+    <string name="label_difficulty">Difficulty</string>
+    <string name="label_difficulty_format">Difficulty: %1$s</string>
+    <string name="label_duration">Duration</string>
+    <string name="label_minutes">min</string>
+    <string name="unknown_technique">Unknown Technique</string>
+    <string name="difficulty_beginner">Beginner</string>
+    <string name="difficulty_intermediate">Intermediate</string>
+    <string name="difficulty_advanced">Advanced</string>
+    <string name="tv_empty_history">No practice sessions found yet.</string>
+
+    <!-- Settings & Dialogs -->
+    <string name="msg_gpu_toggle">GPU delegate updated. Restart practice to apply.</string>
+    <string name="msg_api_updated">API Host updated.</string>
+    <string name="dialog_clear_title">Clear Data</string>
+    <string name="dialog_clear_msg">This will delete all your practice session history. This action cannot be undone.</string>
+    <string name="btn_clear">Clear</string>
+    <string name="btn_cancel">Cancel</string>
+    <string name="msg_data_cleared">Session data cleared.</string>
+
+    <!-- Session Result Feedback -->
+    <string name="feedback_excellent">Outstanding! Your hand movements closely match the master artisan\'s technique. You\'ve mastered the rhythm of Galle heritage.</string>
+    <string name="feedback_good">Great effort! Keep practicing the timing and you\'ll reach expert level soon.</string>
+    <string name="feedback_average">Good start! Focus on the wrist position and keeping the bobbin tension even.</string>
+    <string name="feedback_low">Persistence is key. Watch the expert demo video again and try to slow down your movements.</string>
+
+    <!-- General UI -->
+    <string name="btn_next">NEXT</string>
+    <string name="btn_get_started">GET STARTED</string>
+    <string name="btn_skip">SKIP</string>
+    <string name="btn_save">SAVE</string>
+    <string name="btn_logout">LOG OUT</string>
+    <string name="title_home">Home</string>
+    <string name="title_practice">Practice</string>
+    <string name="title_progress">Progress</string>
+    <string name="title_profile">Profile</string>
+    <string name="title_techniques">Beeralu Techniques</string>
+    <string name="title_history">Session History</string>
+    <string name="title_expert_demo">Expert Demo</string>
+    <string name="label_sessions">Sessions</string>
+    <string name="label_avg_accuracy">Avg Accuracy</string>
+    <string name="label_best_score">Best Score</string>
+    <string name="label_practice_time">Practice Time</string>
+    <string name="home_start_title">Start Practising</string>
+    <string name="home_start_desc">Choose a Beeralu technique and practice with AR</string>
+    <string name="home_progress_title">My Progress</string>
+    <string name="home_progress_desc">View accuracy charts and session history</string>
+    <string name="home_stories_title">Cultural Stories</string>
+    <string name="home_stories_desc">Discover the 600-year history of Beeralu</string>
+    <string name="title_create_account">Create Account</string>
+    <string name="title_register_community">Join the Beeralu learning community</string>
+    <string name="hint_full_name">Full Name</string>
+    <string name="btn_create_account">CREATE ACCOUNT</string>
+    <string name="link_login">Already have an account? Login</string>
+
+    <!-- Detailed UI Strings -->
+    <string name="btn_reset_password">RESET PASSWORD</string>
+    <string name="label_save">Save</string>
+    <string name="label_open_admin">Open Admin Panel</string>
+    <string name="label_version">Version</string>
+    <string name="msg_no_video">No video available for this technique</string>
+    <string name="msg_demo_coming_soon">Demo video coming soon</string>
+    <string name="btn_start_practice_ar">START PRACTICE WITH AR</string>
+    <string name="msg_no_sessions">No sessions yet — start practising!</string>
+    <string name="label_best">Best</string>
+    <string name="btn_record_demo">RECORD ARTISAN DEMO</string>
+    <string name="label_admin_validate">Validate Template (Admin)</string>
+    <string name="msg_admin_validate_desc">Review the recorded gesture demo above.\nApprove to add it to the app, or reject to re-record.</string>
+    <string name="btn_reject">REJECT</string>
+    <string name="btn_approve">APPROVE</string>
+    <string name="btn_continue">Continue</string>
+    <string name="label_admin_upload">Upload Template (Admin)</string>
+    <string name="label_english">ඉංග්‍රීසි (English)</string>
+    <string name="label_sinhala">සිංහල (Sinhala)</string>
+    <string name="hint_confirm_password">Confirm Password</string>
+    <string name="accuracy_excellent">Excellent</string>
+    <string name="accuracy_good">Good</string>
+    <string name="accuracy_keep_practising">Keep Practising</string>
+    <string name="accuracy_needs_work">Needs Work</string>
+    <string name="label_m">m</string>
+    <string name="label_s">s</string>
+    <string name="label_start">START</string>
+    <string name="label_stop">STOP</string>
+    <string name="title_camera_permission">Camera Required</string>
+    <string name="msg_camera_rationale">CultureSync needs your camera to track hand movements and provide AR overlay feedback.</string>
+    <string name="hint_technique_name">Technique Name</string>
+
+    <string name="default_accuracy">—</string>
+    <string name="default_timer">00:00</string>
+    <string name="default_frames">0</string>
+    <string name="msg_point_hand">Point your hand at the camera</string>
+    <string name="title_welcome_back">Welcome Back</string>
+    <string name="subtitle_login_journey">Sign in to continue your Beeralu journey</string>
+    <string name="title_session_complete">Session Complete</string>
+    <string name="label_frames">Frames</string>
+    <string name="title_accuracy_trend">Accuracy Trend</string>
+    <string name="btn_try_again">Try Again</string>
+    <string name="btn_back_to_dashboard">Back to Dashboard</string>
+    <string name="label_avg">Avg</string>
+    <string name="label_time">Time</string>
+    <string name="title_leaderboard">Global Leaderboard</string>
+    <string name="label_sessions_completed">%1$d sessions completed</string>
+    <string name="label_avg_accuracy_short">%1$d%% Avg</string>
+    <string name="title_forgot_password">Reset Password</string>
+    <string name="msg_forgot_password_desc">Enter your email and a new password to reset your account.</string>
+    <string name="hint_new_password">New Password</string>
+    <string name="label_history_short">History</string>
+    <string name="label_welcome_user">Welcome, %1$s!</string>
+    <string name="label_version_format">Version %1$s</string>
+    <string name="title_accuracy_over_time">Accuracy Over Time</string>
+
+    <!-- Techniques -->
+    <string name="tech_beeralu_basic_name">Basic Crossing</string>
+    <string name="tech_beeralu_basic_desc">The foundational cross-over movement of two bobbins.</string>
+    <string name="tech_beeralu_cross_name">Cross &amp; Twist</string>
+    <string name="tech_beeralu_cross_desc">Combines crossing and twisting over a repeating sequence.</string>
+    <string name="tech_beeralu_twist_name">Double Twist</string>
+    <string name="tech_beeralu_twist_desc">A double twist used in border edges.</string>
+    <string name="tech_beeralu_diamond_name">Diamond Pattern</string>
+    <string name="tech_beeralu_diamond_desc">Creates the classic diamond grid.</string>
+    <string name="tech_beeralu_flower_name">Flower Motif</string>
+    <string name="tech_beeralu_flower_desc">A decorative floral pattern.</string>
+    <string name="tech_beeralu_wave_name">Wave Border</string>
+    <string name="tech_beeralu_wave_desc">A flowing wave edge finish.</string>
+
+    <!-- Admin Messages -->
+    <string name="msg_template_approved">Template securely approved and saved to device storage.</string>
+    <string name="msg_template_rejected">Template rejected and cleanly deleted.</string>
+    <string name="msg_save_success">Video and Template saved successfully</string>
+    <string name="msg_recording_cancelled">Video recording cancelled</string>
+    <string name="err_enter_name">Enter technique name first</string>
+    <string name="err_no_camera">No camera application found to take video</string>
+
+    <!-- Sync and Roles -->
+    <string name="status_synced">✅ Synced</string>
+    <string name="status_pending">⏳ Pending</string>
+    <string name="role_student">Student</string>
+    <string name="role_tourist">Tourist</string>
+    <string name="role_artisan">Artisan</string>
+    <string name="role_shopowner">Shop Owner</string>
+    <string name="dialog_logout_title">Log out</string>
+    <string name="dialog_logout_msg">Are you sure you want to log out?</string>
+
+    <!-- User Type Selection -->
+    <string name="user_type_title">Who are you?</string>
+    <string name="user_type_subtitle">Select your role to personalize your journey</string>
+    <string name="type_student">Student</string>
+    <string name="type_tourist">Tourist</string>
+    <string name="type_artisan">Artisan</string>
+    <string name="type_shop_owner">Shop Owner</string>
+
+    <!-- Cultural Stories -->
+    <string name="story_title_1">The History of Beeralu</string>
+    <string name="story_body_1">Beeralu lace making is a traditional craft that has been passed down through generations in the southern coastal areas of Sri Lanka. Rooted in the colonial era, it remains a testament to the intricate skill and patience of local artisans, preserving a unique heritage that defines the cultural identity of Galle.</string>
+    <string name="story_title_2">Priyani’s Vision</string>
+    <string name="story_body_2">After the devastating 2004 Tsunami, master artisan M.B. Priyani spearheaded the revival of Beeralu lace in Galle. Her dedication helped rebuild the lives of many women, transforming a struggling craft into a symbol of resilience and empowerment for the community.</string>
+    <string name="story_title_3">Portuguese Origins</string>
+    <string name="story_body_3">Although deeply integrated into Sri Lankan culture, Beeralu lace making was originally introduced by the Portuguese in the 16th century. Over hundreds of years, local artisans adapted these techniques, infusing them with Sri Lankan motifs and rhythms to create the distinct \'Galle Lace\' we know today.</string>
+
+    <!-- Onboarding -->
+    <string name="onboard_title_1">Learn Beeralu Lace Making</string>
+    <string name="onboard_desc_1">Master the ancient craft of Galle\'s Beeralu lace with AR-guided hand tracking and expert templates.</string>
+    <string name="onboard_title_2">Guided by Master Artisans</string>
+    <string name="onboard_desc_2">Practice alongside expert recordings from master artisan M.B. Priyani. Get real-time accuracy feedback as you move.</string>
+    <string name="onboard_title_3">Preserve Heritage Together</string>
+    <string name="onboard_desc_3">Join a community dedicated to preserving Sri Lanka\'s 600-year-old Beeralu tradition for future generations.</string>
+
+    <!-- Practice / AR Overlay -->
+    <string name="status_point_hand">Point your hand at the camera</string>
+    <string name="err_camera_required">Camera permission is required to use AR practice mode.</string>
+    <string name="err_template_not_found">Expert template not found for this technique. Please contact an admin.</string>
+    <string name="accuracy_average">Keep Practising</string>
+    <string name="accuracy_low">Needs Work</string>
+    <string name="status_practising">Practising…</string>
+
+    <!-- Additional UI -->
+    <string name="label_duration_format">Duration: %1$d min</string>
+    <string name="percentage_format">%1$d%%</string>
+    <string name="minutes_format">%1$d %2$s</string>
+
+    <!-- Cultural Stories -->
+    <string name="cultural_stories_title">Cultural Stories</string>
+
+    <!-- Settings -->
+    <string name="settings_title">Settings</string>
+    <string name="settings_language">Language</string>
+    <string name="settings_gpu_delegate">GPU Acceleration</string>
+    <string name="settings_gpu_desc">Use GPU delegate for faster MediaPipe inference</string>
+    <string name="settings_api_url">API Server URL</string>
+    <string name="settings_clear_data">Clear Local Data</string>
+    <string name="settings_admin">Admin Tools</string>
+</resources>
+

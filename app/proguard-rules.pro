@@ -1,0 +1,5 @@
+-keep class com.culturesync.app.** { *; }
+-keep class com.google.mediapipe.** { *; }
+-keep class com.google.ar.** { *; }
+-keepattributes *Annotation*
+-keepattributes SourceFile,LineNumberTable
